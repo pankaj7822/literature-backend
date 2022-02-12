@@ -22,7 +22,7 @@ from django.urls import path,include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework.permissions import AllowAny
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -49,3 +49,4 @@ urlpatterns = [
     path("rest/", include("rest_framework.urls", namespace="rest_framework")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+urlpatterns += staticfiles_urlpatterns()
